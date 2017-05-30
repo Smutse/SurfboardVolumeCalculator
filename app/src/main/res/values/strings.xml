@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Surfboard Volume Calculator</string>
+
+    <string-array name="level">
+    <item>Pro</item>
+    <item>Advanced</item>
+    <item>Intermediate</item>
+    <item>Casual</item>
+    <item>Beginner</item>
+    </string-array>
+
+    <string-array name="units">
+        <item>lb</item>
+        <item>stone</item>
+        <item>kg</item>
+    </string-array>
+
+</resources>

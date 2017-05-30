@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chriss.surfboardvolumecalculator.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <Spinner
+        android:id="@+id/levelSpinner"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:entries="@array/level"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/weightTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelSpinner" />
+
+    <Spinner
+        android:id="@+id/unitsSpinner"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
+        android:entries="@array/units"
+        app:layout_constraintBaseline_toBaselineOf="@+id/weightTxt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/weightTxt"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/volumeTotalTxt"
+        android:layout_width="144dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/calcButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="onClick"
+        android:text="Calculate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/adView" />
+
+    <TextView
+        android:id="@+id/longTxt"
+        android:layout_width="37dp"
+        android:layout_height="26dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/minTxt"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton" />
+
+    <TextView
+        android:id="@+id/fishTxt"
+        android:layout_width="37dp"
+        android:layout_height="26dp"
+        app:layout_constraintRight_toLeftOf="@+id/minTxt"
+        app:layout_constraintLeft_toRightOf="@+id/shortTxt"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton" />
+
+    <TextView
+        android:id="@+id/minTxt"
+        android:layout_width="37dp"
+        android:layout_height="26dp"
+        app:layout_constraintRight_toLeftOf="@+id/longTxt"
+        app:layout_constraintLeft_toRightOf="@+id/fishTxt"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton" />
+
+    <TextView
+        android:id="@+id/shortTxt"
+        android:layout_width="37dp"
+        android:layout_height="26dp"
+        app:layout_constraintRight_toLeftOf="@+id/fishTxt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/calcButton" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Minimum Volume"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/volumeTotalTxt"
+        tools:text="Minimum Volume (Litres)"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/wetsuitTxt" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="29dp"
+        android:layout_height="145dp"
+        app:srcCompat="@drawable/surfoutlineshort"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/imageView2"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/shortTxt"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.09" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="29dp"
+        android:layout_height="145dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/fishTxt"
+        app:layout_constraintLeft_toRightOf="@+id/imageView"
+        app:layout_constraintRight_toLeftOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/surfoutlinefish"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="29dp"
+        android:layout_height="145dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/minTxt"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        app:layout_constraintRight_toLeftOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/surfoutlinemal"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="29dp"
+        android:layout_height="145dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/longTxt"
+        app:layout_constraintLeft_toRightOf="@+id/imageView3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/surfoutlinelong"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <TextView
+        android:id="@+id/wetsuitTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Do you usually wear a wetsuit?"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/weightTxt"
+        android:layout_marginStart="8dp" />
+
+    <CheckBox
+        android:id="@+id/wetsuitCheck"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="16dp"
+        android:checked="false"
+        app:layout_constraintBaseline_toBaselineOf="@+id/wetsuitTxt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/wetsuitTxt"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-4109925382832158/8667985226"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="9dp">
+    </com.google.android.gms.ads.AdView>
+
+</android.support.constraint.ConstraintLayout>
